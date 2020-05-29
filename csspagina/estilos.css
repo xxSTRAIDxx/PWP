@@ -1,0 +1,622 @@
+* {
+    margin: 0;
+    padding: 0;
+    /*con border box le damos la anchura a toda la caja si es de 400px incluye, el contenido el padding y la margen, pero no se pasa de los 400px en cambian content-box si*/
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: gray;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-weight: 300;
+    color: #1d273b;
+
+}
+
+.contenedor {
+    /*margin va en juego con el ancho*/
+    width: 80%;
+    /*al haber definido el ancho de 80% con max-width reducimos aun mas ese porcentaje*/
+    max-width: 1000px;
+    margin: auto;
+    /*overflow  especifica: si recortar contenido, dibujar barras de desplazamiento o mostrar el contenido excedente en un elemento a nivel de bloque. Con hidden se recorta*/
+    overflow: hidden;
+}
+
+.contenedor1 {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 60px;
+}
+
+/*navegador ------------------------------------------*/
+
+header:before {
+    content: "";
+    display: block;
+    margin-bottom: 80px;
+}
+
+nav {
+    width: 100%;
+    top: -1px;
+    position: fixed;
+    height: 80pX;
+    margin-bottom: 10px solid transparent;
+    /*el primer valor es el desplazamiento en x, el segudo en y hacia abajo, el tercero es el desenfoque y el cuarto difusion*/
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, .2);
+    background: #fff;
+    transition: 0.5s ease-in-out;
+}
+
+@keyframes mostrarlog{
+    0%{
+        transform: scale(0);
+    }
+    
+    100%{
+        transform: scale(1);
+    }
+}
+
+.navegador {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: 1s mostrarlog ease-in-out;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+
+
+.logo h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 50px;
+    font-weight: 700;
+    margin-left: -20px;
+}
+
+.logo img {
+    width: 80px;
+    padding: 5px;
+    vertical-align: top;
+    
+}
+
+
+.linksnavegador{
+    z-index: 100;
+}
+
+.linksnavegador a {
+    margin-left: 20px;
+}
+
+.linksnavegador a:hover {
+    color: rgba(29, 207, 114);
+    transition: 0.1s ease-in-out;
+    border-bottom: 2px solid black;
+    transition: 0.3 ease-in-out;
+}
+
+.hamburguer {
+    display: none;
+    height: 80px;
+    width: 80px;
+    text-align: center;
+    align-content: center;
+    cursor: pointer;
+     /*La z-indexpropiedad especifica el orden de apilamiento de un elemento.
+
+Un elemento con un orden de pila mayor siempre está delante de un elemento con un orden de pila menor.*/
+    z-index: 100;
+}
+
+.hamburguer i {
+    font-size: 25px;
+    /*organizar verticalmente*/
+    line-height: 90px;
+}
+
+/*EL HEADER---------------------------------------*/
+
+.imagen1 img {
+    width: 500px;
+    animation: 1s mostrarim ease-in-out;
+}
+
+@keyframes mostrarim{
+    0%{
+        transform: scale(0);
+    }
+    
+    100%{
+        transform: scale(1);
+    }
+}
+
+
+.contenidoheader {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    align-items: center;
+    height: 600px;
+}
+
+.textoheader h2 {
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.textoheader p {
+
+    font-size: 20px;
+    font-weight: 100;
+    margin-bottom: 30px;
+    text-align: center;
+    color: gray;
+}
+
+
+.textoheader a {
+
+    color: #fff;
+    background: #1dcf72;
+    margin-left: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 15px 1px rgba(29, 207, 114, .6);
+}
+
+/*SOBRENOSOTROS------------------------------*/
+.sobrenosotros {
+    background: #f2f2f2;
+}
+
+.titulo {
+    font-size: 40px;
+    margin-bottom: 60px;
+    display: inline-block;
+    text-align: center;
+    font-weight: 600;
+    margin-left: 30px;
+}
+
+.contenido-sobrenosotros {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.articulo {
+    width: 30%;
+    margin-right: 10px;
+    margin-bottom: 30px;
+    background: #fff;
+    border-radius: 30px;
+    padding: 40px 20px;
+}
+
+.articulo:hover {
+    box-shadow: 5px 5px 10px 12px rgba(221, 235, 228, .9);
+    transition: 0.3s ease-in-out;
+}
+
+.articulo i {
+    width: 80px;
+    height: 80px;
+    background: rgba(29, 207, 114);
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+    /*Alinear verticalmente*/
+    line-height: 80px;
+    border-radius: 50px;
+    margin-bottom: 20px;
+    box-shadow: 2px 2px 20px 0 rgba(29, 207, 114, .9);
+}
+
+.articulo h2 {
+    margin-bottom: 20px;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.articulo p {
+    color: grey;
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+
+.articulo a {
+    font-size: 20px;
+}
+
+.articulo a:hover {
+    color: rgba(29, 207, 114);
+    transition: 0.5s ease-in-out;
+}
+
+
+/*PREGUNTAS-------------------------------------*/
+
+.preguntas {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 30px 0;
+    height: 600px;
+}
+
+.imagen2 img {
+    width: 500px;
+    height: 500px;
+}
+
+.texto-preguntas h2 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.texto-preguntas p {
+    font-size: 17px;
+    color: gray;
+    margin-bottom: 30px;
+}
+
+.texto-preguntas a {
+    background: rgba(29, 207, 114);
+    padding: 15px;
+    border-radius: 10px;
+    color: #fff;
+    box-shadow: 5px 5px 20px 0px rgba(29, 207, 114, .9);
+    margin-left: 85x;
+}
+
+/*RESULTADOS------------------------------------*/
+.resultados {
+    background: #00df4b;
+    padding: 100px 0;
+    height: 700px;
+    align-items: center;
+}
+
+.contenido-resultados {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.bloquedeprecios {
+    display: flex;
+    justify-content: space-around;
+    width: 200%;
+    flex-wrap: wrap;
+}
+
+.precios {
+    width: 45%;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, .2);
+    padding: 25px;
+    border-radius: 15px
+}
+
+.precios h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.precios p {
+    color: #fff;
+    font-size: 18px;
+}
+
+.texto-resultados {
+    margin-left: 50px;
+}
+
+.texto-resultados h2 {
+    margin-bottom: 20px;
+    font-size: 40px;
+    color: #fff;
+}
+
+.texto-resultados p {
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 40px;
+}
+
+.texto-resultados a {
+    padding: 15px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.texto-resultados a:hover {
+    background: rgba(255, 255, 255, .2);
+    transition: 0.3s ease-in-out;
+}
+
+/*Servicios------------------------------------------*/
+
+.servicios {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 0;
+    align-items: center;
+    height: 600px;
+}
+
+.imagen3 {
+    border: 1px solid #00df4b;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.imagen3 img {
+    width: 500px;
+}
+
+.texto-servicios h4 {
+    background: #f2f2f2;
+    margin-bottom: 15px;
+    font-size: 25px;
+    border: 2px solid rgba(29, 207, 114);
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.texto-servicios i {
+    font-size: 30px;
+    margin-right: 10px;
+    color: rgba(29, 207, 114);
+    ;
+}
+
+/*FOOTER------------------------------------------*/
+
+footer {
+    background: #f2f2f2;
+    display: flex;
+    justify-content: space-around;
+    padding: 30px 0;
+}
+
+.partfooter img {
+    width: 80px;
+}
+
+.partfooter {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.partfooter h4 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.partfooter h2 {
+    display: flex;
+    flex-direction: row;
+}
+
+.partfooter a {
+    margin-bottom: 5px;
+}
+
+
+.redessociales i {
+    display: inline-block;
+    font-size: 20px;
+    width: 38px;
+    height: 38px;
+    border: 1px solid #a2a2a2;
+    line-height: 36px;
+    border-radius: 50%;
+    color: #a2a2a2;
+    cursor: pointer;
+
+}
+
+.redessociales .fa-facebook-f:hover {
+    color: #fff;
+    background: blue;
+    transition: 0.3s ease-in-out;
+}
+
+.redessociales .fa-twitter:hover {
+    color: #fff;
+    background: #2ae2fc;
+    transition: 0.3s ease-in-out;
+}
+
+.redessociales .fa-instagram:hover {
+    color: #fff;
+    background: orange;
+    transition: 0.3s ease-in-out;
+}
+
+.redessociales .fa-youtube:hover {
+    color: #fff;
+    background: red;
+    transition: 0.3s ease-in-out;
+
+}
+
+/*MEDIA--------------------------------------------*/
+
+@media all and (max-width:1030px) {
+    .resultados {
+        height: auto;
+    }
+
+    .contenido-resultados {
+        flex-direction: column;
+    }
+
+    .texto-resultados {
+        margin-bottom: 50px;
+    }
+
+    .bloquedeprecios {
+        width: 100%
+    }
+
+}
+
+@media all and (max-width:900px) {
+    .contenidoheader {
+        flex-direction: column;
+        height: auto;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    .textoheader {
+        margin: 40px 0;
+
+    }
+
+    .contenido-sobrenosotros {
+        justify-content: space-around;
+    }
+
+    .articulo {
+        width: 100%;
+    }
+
+    .preguntas {
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+        text-align: center;
+    }
+
+    .texto-preguntas {
+        margin-bottom: 50px;
+    }
+
+    .servicios {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .texto-servicios {
+        display: flex;
+        flex-direction: row;
+        margin-top: 30px;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    .texto-servicios h4 {
+        display: flex;
+        width: 33%;
+        margin-right: 10px
+    }
+
+}
+
+@media all and (max-width:700px) {
+
+    .imagen1 img {
+        width: 400px;
+    }
+
+    .imagen2 img {
+        width: 400px;
+    }
+
+    .imagen3 img {
+        width: 400px;
+    }
+
+    .linksnavegador {
+        display: none;
+    }
+
+    .hamburguer {
+        display: block;
+    }
+
+    .contenido-sobrenosotros {
+        flex-direction: column;
+    }
+
+    .articulo {
+        width: 100%;
+    }
+
+    .texto-servicios {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .texto-servicios h4 {
+        width: 50%;
+    }
+
+    /*En esta parte configuramos el menu de hamburguesa*/
+    /*http://bennettfeely.com/ es la pagina de las formas*/
+    .linksnavegador {
+        background: #00df4b;
+        position: fixed;
+        flex-direction: column;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        color: black;
+        top: 0;
+        right: 0;
+        justify-content: space-around;
+        font-size: 30px;
+        clip-path: circle(0.0% at 100% 0);
+        transition: 0.5s ease-in-out;
+
+    }
+
+    .linksnavegador a {
+        color: #fff;
+        
+    }
+
+    .linksnavegador a:hover{
+        color: midnightblue;
+        transition: 0.5s ease-in-out;
+        border-bottom: 0px;
+    }
+    /*Esta clase la creamos con el fin de agregarla dese el main.js*/
+    .despliegue {
+        clip-path: circle(133.8% at 100% 0);
+    }
+}
